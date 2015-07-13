@@ -7,22 +7,29 @@ public class MenusLoadLevel : MonoBehaviour {
 
 	public Sprite SpriteSwap;
 	private SpriteRenderer spriteRenderer;
+	
+	public AudioClip roar;
+	AudioSource audio;
+
 
 	void Start (){
 				StartGame = GameObject.Find ("StartGame");
 				ExitApp = GameObject.Find ("ExitApp");
 				//StartCoroutine(Example());
-			spriteRenderer = GetComponent<SpriteRenderer>();
+				spriteRenderer = GetComponent<SpriteRenderer>();
+				audio = GetComponent<AudioSource>();
 		}
 
 
-	IEnumerator CountDown(){
-		yield return new WaitForSeconds (1);
+	IEnumerator CountDown(float timeToWait){
+		yield return new WaitForSeconds(timeToWait);
 	}
-	void OnMouseDown() {
+	IEnumerator OnMouseDown() {
 		if (gameObject.name=="StartGame"){
+			audio.PlayOneShot(roar, 1F);
 			spriteRenderer.sprite = SpriteSwap;
-			StartCoroutine(CountDown());{
+			audio.PlayOneShot(roar, 1F);
+			yield return StartCoroutine(CountDown(2));{
 			Application.LoadLevel(1);
 			}
 
@@ -32,5 +39,7 @@ public class MenusLoadLevel : MonoBehaviour {
 			spriteRenderer.sprite = SpriteSwap;
 			Application.Quit();
 		}
-} 
+}
+
+
 }

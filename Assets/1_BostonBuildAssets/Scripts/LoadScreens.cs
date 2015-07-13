@@ -5,7 +5,7 @@ public class LoadScreens : MonoBehaviour {
 
 	public IEnumerator Start()
 	{
-			yield return StartCoroutine(WaitASec(10)); // wait 5 seconds before loading new scene.
+			yield return StartCoroutine(WaitASec(15)); // wait 5 seconds before loading new scene.
 			Application.LoadLevel(2);
 
 	}
