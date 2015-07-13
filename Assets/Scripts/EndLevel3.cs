@@ -7,7 +7,7 @@ public class EndLevel3 : MonoBehaviour {
 	{
 		if(other.tag == "Player" && GameManager.playerScore >= 200)	
 		{
-			Application.LoadLevel(2);	
+			Application.LoadLevel(0);	
 			return;	
 		}
 
