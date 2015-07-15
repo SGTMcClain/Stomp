@@ -12,10 +12,11 @@ public class MenusLoadLevel : MonoBehaviour {
 	AudioSource audio;
 
 
+
 	void Start (){
 				StartGame = GameObject.Find ("StartGame");
 				ExitApp = GameObject.Find ("ExitApp");
-				//StartCoroutine(Example());
+			
 				spriteRenderer = GetComponent<SpriteRenderer>();
 				audio = GetComponent<AudioSource>();
 		}
@@ -33,13 +34,14 @@ public class MenusLoadLevel : MonoBehaviour {
 			Application.LoadLevel(1);
 			}
 
-}
 
-			else if(gameObject.name=="ExitApp"){
+
+			 if(gameObject.name=="ExitApp"){
 			spriteRenderer.sprite = SpriteSwap;
 			Application.Quit();
 		}
 }
 
 
+}
 }
