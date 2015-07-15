@@ -59,7 +59,16 @@ public class GameManager : MonoBehaviour
 	{
 
 	}
-	
+
+	void OnLevelWasLoaded(int level) {
+		playerHealth = 100f;
+		megaCounter = 0f;
+		
+	}
+
+
+
+
 	void Update ()
 	{ 
 		//DEBUGING and TESTING Area**********
