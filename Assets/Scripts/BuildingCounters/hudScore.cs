@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class hudScore : MonoBehaviour {
 	//allows us to access the GUT Text Game Object and change it's contents
 	public GameObject GUITextObject; 
-	Text txt;
+	Text txt; 	
 	
 	// Use this for initialization
 	void Start () {
